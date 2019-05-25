@@ -14,22 +14,22 @@ for i in range(4):
 print ("Te desafío a adivinar el número de 4 cifras que estoy pensando!")
 print ("Te dejo una ayuda, las cifras son distintas")
 
-#Validamos que ingrese sólo números
+
 while True:
     respuesta = input("¿Que número crees que estoy pensando?: ")
     valida = True
-    letra = 0
     for letra in respuesta:
-        if letra not in numeros:
-         print("Debe ingresar numeros")
-         valida = False
-         break
-        if letra != 4:
-            print("Debe ingresar números de 4 cifras")
-            valida = False
+        if letra not in numeros:  #Validamos que ingrese sólo números
+           print("Debe ingresar numeros ")
+           valida = False
+           break   
+        elif len(respuesta)!= 4:  #Validamos que ingrese sólo números de 4 cifras
+           print("Debe ingresar números de 4 cifras") 
+           valida = False
+           break   
+
     if valida == True:
-        break  
-            
+        break                    
             
 
 #Contamos los intentos y respuestas regulares o correctas
