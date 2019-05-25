@@ -51,3 +51,11 @@ while respuesta != codigo:
     respuesta = input("Ingresa otro número: ")  
 
 print ("Felicitaciones! Adivinaste el codigo en", intentos, "intentos.")
+
+
+   
+
+
+   
+
+  
