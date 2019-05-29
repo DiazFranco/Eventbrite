@@ -11,56 +11,60 @@ for i in range(4):
         candidato = random.choice(numeros)
     codigo = codigo + candidato
 
-print ("Te desafío a adivinar el número de 4 cifras que estas pensando!")
-print ("Instrucciones: Me debes responder 1B (1 bien, en caso de que algun numero esté en la posición correcta y 1R (1 regular, en caso de que exista pero no esté en la posición)")
+print ("Te desafío a que adivino el número de 4 cifras que estas pensando!")
+print ("Instrucciones: Me debes responder en bien, las cifras que están en la posición correcta y en regular, las cifras que se encuentren dentro de tu número pero en diferente posición")
 codigo = 1234
-print ('¿Tu número es : ' , codigo , '?')
+
+
 
 numero = int(codigo)  
 
-respuesta = input("Responde: ")
+
 
 #Guardamos las respuestas separables
+while True: 
+ print ('¿Tu número es : ' , codigo , '?')
+ bien = input("Bien: ")
+ regular = input("Regular: ")
+ break
 
-for i in respuesta:
-    var1 = respuesta[0:1]
-    var2 = respuesta[3:4]
+while bien != "4":
     candidato2 = numero + 1
-    num1= 0
-    if str(codigo)[0:1] == str(candidato2)[0:1]:
+    b= 0
+    r = 0
+    num1 = 0
+    num2 = 0
+    num3 = 0
+    num4 = 0
+    for i in range(4):   
+     if str(codigo)[0:1] == str(candidato2)[0:1] :
         num1 = 1
-    else:
-        num1 = 0    
-    if str(codigo)[1:2] == str(candidato2)[1:2]:
+        b = 1  
+     if str(codigo)[1:2] == str(candidato2)[1:2]:
         num2 = 1
-    else:
-        num2=0
-    if str(codigo)[2:3] == str(candidato2)[2:3]:
+        b = b + 1
+     if str(codigo)[2:3] == str(candidato2)[2:3]:
         num3 = 1
-    else:
-        num3=0
-    if str(codigo)[3:4] == str(candidato2)[3:4]:
+        b = b + 1
+     if str(codigo)[3:4] == str(candidato2)[3:4]:
         num4 = 1
-    else:
-        num4=0
-    if str(candidato2)[0:1] in str(codigo) and num1 == 1:
-        num11 = 0
-    else: 
-        num11 = 1    
-    if str(candidato2)[1:2] in str(codigo) and num2 == 1:
-        num22 = 0
-    else: 
-        num22 = 1 
-    if str(candidato2)[2:3] in str(codigo) and num3 == 1:
-        num33 = 0
-    else: 
-        num33 = 1   
-    if str(candidato2)[3:4] in str(codigo) and num4 == 1:
-        num44 = 0
-    else: 
-        num44 = 1  
+        b = b + 1
+     if str(candidato2)[0:1]  in str(codigo) and num1 != 1:
+        r =  1
+     if str(candidato2)[1:2]  in str(codigo) and num2 != 1:
+        r = r + 1
+     if str(candidato2)[2:3]  in str(codigo) and num3 != 1:
+        r = r + 1
+     if str(candidato2)[3:4]  in str(codigo) and num4 != 1:
+        r = r + 1 
 
-print("respuesta1: " ,num1+num2+num3+num4, "respuesta2: ", num11+num22+num33+num44)      
+    while b == bien and r == regular:
+     print("Tu número es: ", candidato2,  "?") 
+     bien = input("Bien: ")
+     regular = input("Regular: ")
+     break
+
+
 
 
 
