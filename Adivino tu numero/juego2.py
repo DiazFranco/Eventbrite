@@ -13,12 +13,6 @@ for i in range(4):
 
 print ("Te desafío a que adivino el número de 4 cifras que estas pensando!")
 print ("Instrucciones: Me debes responder en bien, las cifras que están en la posición correcta y en regular, las cifras que se encuentren dentro de tu número pero en diferente posición")
-codigo = 1234
-
-
-
-numero = int(codigo)  
-
 
 
 #Guardamos las respuestas separables
@@ -26,10 +20,15 @@ while True:
  print ('¿Tu número es : ' , codigo , '?')
  bien = input("Bien: ")
  regular = input("Regular: ")
+ if bien == "4":
+      print("Adiviné tu número! Es: ", codigo) 
  break
 
-while bien != "4":
-    candidato2 = numero + 1
+numero = int(codigo)  
+
+candidato2 = numero + 1
+
+while candidato2 != codigo:
     b= 0
     r = 0
     num1 = 0
@@ -57,12 +56,15 @@ while bien != "4":
         r = r + 1
      if str(candidato2)[3:4]  in str(codigo) and num4 != 1:
         r = r + 1 
+     continue
+while b == bien and r == regular:
+   print("Tu número es: ", candidato2,  "?") 
+   bien = input("Bien: ")
+   regular = input("Regular: ")
 
-    while b == bien and r == regular:
-     print("Tu número es: ", candidato2,  "?") 
-     bien = input("Bien: ")
-     regular = input("Regular: ")
-     break
+
+
+  
 
 
 
